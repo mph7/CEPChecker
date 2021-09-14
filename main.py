@@ -8,7 +8,6 @@ def main():
     print("#" * 7, " Consulta CEP ", "#" * 7)
     print("#" * 30, "\n")
 
-
     while 1:
         cep = input("Digite o CEP para a consulta: ")
 
@@ -32,7 +31,8 @@ def main():
     else:
         print("{}: CEP Inválido".format(cep))
 
-    option = int(input("Deseja realizar uma nova consulta? \n1. Sim\n2. Sair\n"))
+    option = int(
+        input("Deseja realizar uma nova consulta? \n1. Sim\n2. Sair\n"))
     if option == 1:
         main()
     else:
