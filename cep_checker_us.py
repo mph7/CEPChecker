@@ -22,16 +22,14 @@ def main():
         print("CEP: {}".format(address_data["post code"]))
         print("Country: {}".format(address_data["country"]))
         print("State: {}".format(address_data["places"]["state"]))
-        print(
-            "State Abbreviation: {}".format(
-                address_data["places"]["state abbreviation"]
-            )
-        )
+        print("State Abbreviation: {}".format(
+            address_data["places"]["state abbreviation"]))
         print("Place: {}".format(address_data["places"]["place name"]))
     else:
         print("{}: Invalid Zip Code".format(zip_code))
 
-    option = int(input("Do you want to make a new search?? \n1. Yes\n2. Exit\n"))
+    option = int(
+        input("Do you want to make a new search?? \n1. Yes\n2. Exit\n"))
     if option == 1:
         main()
     else:
