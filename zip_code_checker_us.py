@@ -2,32 +2,31 @@ import requests
 
 
 def main():
-    print("#" * 30)
-    print("#" * 7, " Zip Code Checker ", "#" * 7)
-    print("#" * 30, "\n")
+    print("#" * 35)
+    print("#" * 7, " Zip Code Searcher ", "#" * 7)
+    print("#" * 35, "\n")
 
     while 1:
         zip_code = input("Type the Zip Code for search: ")
 
         if len(zip_code) == 5:
             break
-        print("Invalid digit quantity")
+        print("Invalid digit quantity.")
 
-    request = requests.get("api.zippopotam.us/us/{}".format(zip_code))
+    request = requests.get("http://api.zippopotam.us/us/{}".format(zip_code))
 
     address_data = request.json()
-
-    if "erro" not in address_data:
+    if address_data != {}:
         print("### Zip Code Found ###")
-        print("CEP: {}".format(address_data["post code"]))
+        print("Zip Code: {}".format(address_data["post code"]))
         print("Country: {}".format(address_data["country"]))
-        print("State: {}".format(address_data["places"]["state"]))
+        print("State: {}".format(address_data["places"][0]["state"]))
         print(
             "State Abbreviation: {}".format(
-                address_data["places"]["state abbreviation"]
+                address_data["places"][0]["state abbreviation"]
             )
         )
-        print("Place: {}".format(address_data["places"]["place name"]))
+        print("City: {}".format(address_data["places"][0]["place name"]))
     else:
         print("{}: Invalid Zip Code".format(zip_code))
 
