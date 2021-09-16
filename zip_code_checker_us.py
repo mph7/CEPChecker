@@ -21,11 +21,8 @@ def main():
         print("Zip Code: {}".format(address_data["post code"]))
         print("Country: {}".format(address_data["country"]))
         print("State: {}".format(address_data["places"][0]["state"]))
-        print(
-            "State Abbreviation: {}".format(
-                address_data["places"][0]["state abbreviation"]
-            )
-        )
+        print("State Abbreviation: {}".format(
+            address_data["places"][0]["state abbreviation"]))
         print("City: {}".format(address_data["places"][0]["place name"]))
     else:
         print("{}: Invalid Zip Code".format(zip_code))
