@@ -30,7 +30,8 @@ def main():
     else:
         print("{}: Invalid Zip Code".format(zip_code))
 
-    option = int(input("Do you want to make a new search?? \n1. Yes\n2. Exit\n"))
+    option = int(
+        input("Do you want to make a new search?? \n1. Yes\n2. Exit\n"))
     if option == 1:
         main()
     else:
